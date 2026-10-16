@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title description">
+  <title id="title">COHE: three evidence gates and six reporting tiers</title>
+  <desc id="description">A proxy–target–protocol tuple feeds three parallel gates: G1 dependence, G2 held-out prediction, and G3 operational transfer. Their joint evidence determines a supported reporting tier. The gates are evaluated separately and do not form a sequential pass-through cascade. The six tiers are Validated surrogate, Predictive validity only, Target-specific relation, Operational-only effect, Weak evidence, and No reliable transfer.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#687888"/></marker>
+  </defs>
+  <rect width="1100" height="500" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172b3a">
+    <text x="24" y="38" font-size="25" font-weight="600">One tuple. Three separately evaluated evidence gates.</text>
+    <text x="24" y="69" font-size="18" fill="#465867">Joint evidence supports a claim for the declared target and protocol.</text>
+    <g font-size="16" fill="#465867" letter-spacing="1">
+      <text x="24" y="116">AUDIT TUPLE</text>
+      <text x="300" y="116">EVIDENCE GATES</text>
+      <text x="755" y="116">SUPPORTED REPORTING TIER</text>
+    </g>
+    <rect x="24" y="183" width="208" height="187" fill="#fff" stroke="#bac7d0" stroke-width="1.3"/>
+    <g text-anchor="middle" font-size="23">
+      <text x="128" y="224">Proxy</text>
+      <text x="128" y="253" font-size="18" fill="#465867">+</text>
+      <text x="128" y="283">Target</text>
+      <text x="128" y="313" font-size="18" fill="#465867">+</text>
+      <text x="128" y="344">Protocol</text>
+    </g>
+    <g fill="none" stroke="#687888" stroke-width="1.4">
+      <path d="M232 276H265M265 184V389"/>
+      <path d="M265 184H297" marker-end="url(#arrow)"/>
+      <path d="M265 287H297" marker-end="url(#arrow)"/>
+      <path d="M265 389H297" marker-end="url(#arrow)"/>
+      <path d="M682 184H714M682 287H714M682 389H714M714 184V389"/>
+      <path d="M714 287H751" marker-end="url(#arrow)"/>
+    </g>
+    <rect x="300" y="142" width="382" height="85" fill="#eef5fb"/>
+    <rect x="300" y="142" width="4" height="85" fill="#215a8e"/>
+    <text x="319" y="175" font-size="23" fill="#215a8e" font-weight="600">G1  Dependence</text>
+    <text x="319" y="207" font-size="19">Pearson r, Spearman ρ</text>
+    <rect x="300" y="245" width="382" height="85" fill="#edf8f6"/>
+    <rect x="300" y="245" width="4" height="85" fill="#087e8b"/>
+    <text x="319" y="278" font-size="23" fill="#087e8b" font-weight="600">G2  Held-out prediction</text>
+    <text x="319" y="310" font-size="19">Held-out predictive power R²</text>
+    <rect x="300" y="347" width="382" height="85" fill="#fff6ed"/>
+    <rect x="300" y="347" width="4" height="85" fill="#9b4f17"/>
+    <text x="319" y="380" font-size="23" fill="#9b4f17" font-weight="600">G3  Operational transfer</text>
+    <text x="319" y="412" font-size="19">Endpoint gain vs. matched baseline</text>
+    <g font-size="21">
+      <text x="755" y="170">Validated surrogate</text>
+      <text x="755" y="219">Predictive validity only</text>
+      <text x="755" y="268">Target-specific relation</text>
+      <text x="755" y="317">Operational-only effect</text>
+      <text x="755" y="366">Weak evidence</text>
+      <text x="755" y="415">No reliable transfer</text>
+    </g>
+    <g stroke="#d5dfe5" stroke-width="1">
+      <path d="M755 185H1075M755 234H1075M755 283H1075M755 332H1075M755 381H1075"/>
+    </g>
+    <text x="24" y="475" font-size="18" fill="#465867">Apply the paper’s tier definitions and assignment order; an unmeasured gate is not a failure.</text>
+  </g>
+</svg>

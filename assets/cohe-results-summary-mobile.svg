@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1040" viewBox="0 0 480 1040" role="img" aria-labelledby="title description">
+  <title id="title">Representative COHE audit settings — mobile layout</title>
+  <desc id="description">The same four audits and numerical evidence as the wide summary: Generative proxies to CE/margin, DINOv2 to first-learning, cross-architecture CE ranking, and ImageNet-1K CE retrieval/triage. Unmeasured gates are distinct from failed transfer; positive-control validity is limited to retrieval/triage.</desc>
+  <rect width="480" height="1040" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#172b3a">
+    <text x="24" y="36" font-size="25" font-weight="600">Representative COHE audits</text>
+    <text x="24" y="67" font-size="19" fill="#465867">Evidence → supported tier (Table 6)</text>
+    <path d="M24 87H456" stroke="#aebdc8"/>
+    <text x="24" y="126" font-size="23" font-weight="600">Generative proxies → CE/margin</text>
+    <g font-size="21">
+      <text x="24" y="163" fill="#215a8e">G1</text><text x="70" y="163">Weak association</text>
+      <text x="24" y="198" fill="#087e8b">G2</text><text x="70" y="198">Near-zero CE R² ≈ 0.0002</text>
+      <text x="24" y="233" fill="#9b4f17">G3</text><text x="70" y="233">No protocol-stable selection gain</text>
+      <text x="24" y="272">Tier: No reliable transfer</text>
+    </g>
+    <path d="M24 292H456" stroke="#d5dfe5"/>
+    <text x="24" y="331" font-size="23" font-weight="600">DINOv2 → first-learning</text>
+    <g font-size="21">
+      <text x="24" y="368" fill="#215a8e">G1  ρ = 0.4363</text><text x="248" y="368" fill="#087e8b">G2  R² = 0.2126</text>
+      <text x="24" y="403" fill="#9b4f17">G3</text><text x="70" y="403">Hard-only accuracy fails†</text>
+      <text x="70" y="433">10%: −14.87 pp vs. Random</text>
+      <text x="24" y="472">Tier: Target-specific relation</text>
+    </g>
+    <path d="M24 492H456" stroke="#d5dfe5"/>
+    <text x="24" y="531" font-size="23" font-weight="600">Cross-architecture CE ranking</text>
+    <g font-size="21">
+      <text x="24" y="568" fill="#215a8e">G1</text><text x="70" y="568">ρ = 0.856–0.914</text>
+      <text x="24" y="603" fill="#465867">G2 / G3: Not evaluated</text>
+      <text x="24" y="642">Tier: Weak evidence (G1 only)</text>
+    </g>
+    <path d="M24 662H456" stroke="#d5dfe5"/>
+    <text x="24" y="701" font-size="23" font-weight="600">ImageNet-1K CE retrieval/triage</text>
+    <g font-size="21">
+      <text x="24" y="738" fill="#215a8e">G1  ρ = 0.578</text><text x="248" y="738" fill="#087e8b">G2  R² = 0.5637</text>
+      <text x="24" y="773" fill="#9b4f17">G3</text><text x="70" y="773">Top-10% recall 62.48%</text>
+      <text x="70" y="805">6.25× enrichment</text>
+      <text x="24" y="844">Tier: Validated surrogate</text>
+      <text x="24" y="875" font-size="20" fill="#465867">retrieval/triage only</text>
+    </g>
+    <path d="M24 897H456" stroke="#aebdc8"/>
+    <g font-size="18" fill="#465867">
+      <text x="24" y="929">† G1/G2: first-learning; G3: CIFAR-100/</text>
+      <text x="24" y="954">ResNet-18 hard-only accuracy selection.</text>
+      <text x="24" y="989">Generative results summarize multiple audits;</text>
+      <text x="24" y="1014">G1/G2 evidence is not an automatic gate pass.</text>
+    </g>
+  </g>
+</svg>

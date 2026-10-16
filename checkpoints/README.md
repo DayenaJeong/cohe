@@ -1,6 +1,6 @@
 # Checkpoints
 
-The [`v1.0-neurips2026` GitHub Release](https://github.com/DayenaJeong/cohe-artifact/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. Checkpoint binaries are not stored in ordinary Git, and third-party pretrained weights are not included.
+The [`v1.0-neurips2026` GitHub Release](https://github.com/DayenaJeong/cohe/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. Checkpoint binaries are not stored in ordinary Git, and third-party pretrained weights are not included.
 
 ## Coverage
 

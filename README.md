@@ -1,14 +1,47 @@
-# COHE: Auditing Non-Transitivity in Sample Difficulty Proxies for Vision Models
+# COHE
 
-**Dayena Jeong and Sunglok Choi** · Accepted at **NeurIPS 2026, Evaluations & Datasets Track**.
+**COHE: Auditing Non-Transitivity in Sample Difficulty Proxies for Vision Models**
 
-COHE audits a specified proxy, discriminative target, and downstream protocol through dependence (Gate 1), held-out predictive validity (Gate 2), and operational transfer (Gate 3). It reports bounded claims rather than a universal pass/fail score.
+**Dayena Jeong, Sunglok Choi**<br>
+NeurIPS 2026 — Evaluations & Datasets
 
-This is the official artifact for the accepted NeurIPS 2026 paper. The fixed camera-ready source and checkpoint release is [`v1.0-neurips2026`](https://github.com/DayenaJeong/cohe-artifact/releases/tag/v1.0-neurips2026).
+[Homepage](https://mint-lab.github.io/cohe/) · [Paper](https://neurips.cc/virtual/2026/poster/139659) · [Code & Checkpoints](https://github.com/DayenaJeong/cohe#data-and-checkpoints)
 
-`v1.0-neurips2026` is the fixed scientific release snapshot; the current `main` branch includes documentation-only post-release corrections, with no changes to scientific code, reported results, or checkpoint binaries.
+COHE (Cross-Objective Hardness Evaluation) audits what a sample difficulty proxy can support for a specified target and downstream protocol. Sample-level ranking agreement, held-out predictive validity, and downstream operational benefit do not necessarily imply one another. COHE evaluates these evidence gates separately and maps their joint evidence to six reporting tiers.
 
-The repository includes the COHE audit code, recovered experiment implementations, seven CIFAR-100 scalar arrays, aggregate and seed-level results, and author-trained checkpoints for retained endpoints. Reproduction coverage varies by experiment because raw datasets, some historical inputs, and third-party pretrained weights are not redistributed.
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/cohe-framework-mobile.svg">
+  <img src="assets/cohe-framework.svg" alt="COHE framework: one proxy–target–protocol tuple, three parallel evidence gates, and six supported reporting tiers.">
+</picture>
+
+[View framework at full size](assets/cohe-framework.svg)
+
+Gates are evaluated separately; their joint evidence supports a tier for the declared target and protocol. See the [reporting-tier definitions and assignment order](docs/CLAIM_TIER_GUIDE.md).
+
+## Key findings
+
+The four settings below follow paper Table 6; each conclusion concerns its audited target and operational endpoint.
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/cohe-results-summary-mobile.svg">
+  <img src="assets/cohe-results-summary.svg" alt="Four representative COHE audits with separate dependence, prediction, transfer evidence, and supported tiers. An accessible text version follows.">
+</picture>
+
+[View summary at full size](assets/cohe-results-summary.svg)
+
+<details>
+<summary>Results as text</summary>
+
+| Audit setting | Evidence and supported tier |
+| --- | --- |
+| Generative proxies → CE/margin | **G1:** weak association. **G2:** near-zero prediction; multi-proxy CE R² ≈ 0.0002. **G3:** no protocol-stable selection gain. **Tier:** No reliable transfer. |
+| DINOv2 → first-learning | **G1:** ρ = 0.4363. **G2:** R² = 0.2126. **G3:** CIFAR-100/ResNet-18 hard-only accuracy selection loses 14.87 pp versus Random at 10%. **Tier:** Target-specific relation. First-learning and selection accuracy are distinct targets. |
+| Cross-architecture CE ranking | **G1:** ρ = 0.856–0.914. **G2/G3:** not evaluated. **Tier:** Weak evidence (G1 only). |
+| ImageNet-1K CE retrieval/triage | **G1:** ρ = 0.578. **G2:** R² = 0.5637. **G3:** top-10% recall = 62.48%, enrichment = 6.25×. **Tier:** Validated surrogate for retrieval/triage only. The proxy is ResNet-18 CE; the target is ResNet-50 CE. |
+
+The generative row summarizes multiple audits. G1/G2 entries describe retained evidence; a gate pass requires the declared criteria and uncertainty checks. An unmeasured gate is distinct from a failed gate. Retrieval/triage is a different endpoint from retraining accuracy.
+
+</details>
 
 ## Installation
 
@@ -38,6 +71,12 @@ Toy examples in `examples/` exercise interfaces and are not experimental evidenc
 
 ## Reproduction and experiments
 
+This is the official artifact for the accepted NeurIPS 2026 paper. The fixed camera-ready source and checkpoint release is [`v1.0-neurips2026`](https://github.com/DayenaJeong/cohe/releases/tag/v1.0-neurips2026).
+
+`v1.0-neurips2026` is the fixed scientific release snapshot; the current `main` branch includes documentation-only post-release corrections, with no changes to scientific code, reported results, or checkpoint binaries.
+
+The repository includes the COHE audit code, recovered experiment implementations, seven CIFAR-100 scalar arrays, aggregate and seed-level results, and author-trained checkpoints for retained endpoints. Reproduction coverage varies by experiment because raw datasets, some historical inputs, and third-party pretrained weights are not redistributed.
+
 [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) summarizes experiment-level coverage, required upstream inputs, and known gaps. [`docs/REPRODUCTION_MATRIX.md`](docs/REPRODUCTION_MATRIX.md) lists expected outputs and GPU entry points. The machine-readable experiment inventory is in [`provenance/release_inventory.csv`](provenance/release_inventory.csv), and [`results/SOURCE_OF_TRUTH.csv`](results/SOURCE_OF_TRUTH.csv) indexes the reported result files.
 
 CPU commands verify released scalars and completed-result statistics. Full scoring or training requires the appropriate datasets, upstream models, inputs, environment, and compute.
@@ -48,11 +87,13 @@ Obtain CIFAR-10/100, Imagenette, and ImageNet-1K from their maintainers and foll
 
 Not all eight primary generative families are released as scalar arrays. ImageNet-1K scalar arrays are intentionally excluded. Target coverage is incomplete for some family/target combinations. Gate 2 covers scalar or low-dimensional inputs; it does not test full underlying representation information.
 
-The [GitHub Release](https://github.com/DayenaJeong/cohe-artifact/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. No checkpoint binary is committed to ordinary Git. See [`checkpoints/README.md`](checkpoints/README.md) for coverage, missing endpoints, manifests, and loading instructions.
+The [GitHub Release](https://github.com/DayenaJeong/cohe/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. No checkpoint binary is committed to ordinary Git. See [`checkpoints/README.md`](checkpoints/README.md) for coverage, missing endpoints, manifests, and loading instructions.
 
 Pretrained model identifiers, recovered revisions, unresolved provenance, and terms pointers are in [`provenance/UPSTREAM_ASSETS.csv`](provenance/UPSTREAM_ASSETS.csv). Users obtain these weights directly from their owners.
 
 ## Limitations
+
+Historical CIFAR-100 source-model provenance is incomplete; Disc-Hard, Predictive Entropy, α-mix, and OHS-XOR characterize retained score-based policies rather than task-trained hardness or uncertainty in general.
 
 Code recovery is partial for historical diagnostics, and some exact historical checkpoint tags remain unresolved. Available training code still needs upstream inputs, GPU compute, and experiment-specific environment validation. DINOv2 selection, the ResNet-50 second learner, and the ImageNet-10 fine-tuning runs have no retained endpoint weights. DDPM ordering includes 18 of 24 expected endpoints. Full regeneration is not claimed for every reported block.
 
@@ -61,5 +102,18 @@ The standalone shuffled-DDIM negative-control runner and cross-architecture runn
 ## Citation and license
 
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff).
+
+```bibtex
+@inproceedings{jeong2026cohe,
+  title = {COHE: Auditing Non-Transitivity in Sample Difficulty Proxies for Vision Models},
+  author = {Jeong, Dayena and Choi, Sunglok},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2026},
+  note = {Evaluations \& Datasets Track},
+  url = {https://neurips.cc/virtual/2026/poster/139659}
+}
+```
+
+This follows the project homepage citation and links to the official NeurIPS presentation record. Update it to match the final proceedings BibTeX when that record becomes available.
 
 Author-created source code is released under the [MIT License](LICENSE). That license does not apply to or relicense third-party datasets, models, or pretrained weights. See [`LICENSE_OR_TERMS.md`](LICENSE_OR_TERMS.md) and the upstream provenance notes for scope.

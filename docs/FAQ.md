@@ -1,6 +1,6 @@
 # FAQ
 
-**Are checkpoint downloads available?** Yes. The [`v1.0-neurips2026` GitHub Release](https://github.com/DayenaJeong/cohe-artifact/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. See [`checkpoints/README.md`](../checkpoints/README.md) for coverage, checksums, and known omissions.
+**Are checkpoint downloads available?** Yes. The [`v1.0-neurips2026` GitHub Release](https://github.com/DayenaJeong/cohe/releases/tag/v1.0-neurips2026) provides 234 author-trained checkpoints in nine archives. See [`checkpoints/README.md`](../checkpoints/README.md) for coverage, checksums, and known omissions.
 
 **Do the CPU commands retrain models?** No. They verify scalar interfaces and completed paired-result arithmetic. GPU runners require user-obtained datasets, score inputs, and the documented environment.
 
