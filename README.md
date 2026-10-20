@@ -1,36 +1,41 @@
-# COHE
+<h1 align="center">COHE</h1>
+<h2 align="center">Auditing Non-Transitivity in Sample Difficulty Proxies for Vision Models</h2>
 
-**COHE: Auditing Non-Transitivity in Sample Difficulty Proxies for Vision Models**
+<p align="center">Dayena Jeong · Sunglok Choi</p>
+<p align="center"><strong>NeurIPS 2026 · Evaluations &amp; Datasets</strong></p>
 
-**Dayena Jeong, Sunglok Choi**<br>
-NeurIPS 2026 — Evaluations & Datasets
+<p align="center">
+  <a href="https://mint-lab.github.io/cohe/"><img src="assets/badge-homepage.svg" alt="Homepage" width="108" height="30"></a>
+  <a href="https://neurips.cc/virtual/2026/poster/139659"><img src="assets/badge-paper.svg" alt="Paper" width="79" height="30"></a>
+  <a href="https://github.com/DayenaJeong/cohe"><img src="assets/badge-code.svg" alt="Code" width="76" height="30"></a>
+  <a href="https://github.com/DayenaJeong/cohe/releases/tag/v1.0-neurips2026"><img src="assets/badge-checkpoints.svg" alt="Checkpoints" width="127" height="30"></a>
+  <a href="#citation-and-license"><img src="assets/badge-bibtex.svg" alt="BibTeX" width="87" height="30"></a>
+</p>
 
-[Homepage](https://mint-lab.github.io/cohe/) · [Paper](https://neurips.cc/virtual/2026/poster/139659) · [Code & Checkpoints](https://github.com/DayenaJeong/cohe#data-and-checkpoints)
+COHE (Cross-Objective Hardness Evaluation) separates ranking agreement, held-out prediction, and downstream benefit when auditing sample difficulty proxies. These forms of evidence need not imply one another.
 
-COHE (Cross-Objective Hardness Evaluation) audits what a sample difficulty proxy can support for a specified target and downstream protocol. Sample-level ranking agreement, held-out predictive validity, and downstream operational benefit do not necessarily imply one another. COHE evaluates these evidence gates separately and maps their joint evidence to six reporting tiers.
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/cohe-framework-mobile.svg">
+    <img src="assets/cohe-framework.svg" alt="Prediction does not guarantee utility. Three parallel COHE gates examine dependence, held-out prediction, and operational transfer. The DINOv2 example supports Target-specific relation." width="1120">
+  </picture>
+</p>
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/cohe-framework-mobile.svg">
-  <img src="assets/cohe-framework.svg" alt="COHE framework: one proxy–target–protocol tuple, three parallel evidence gates, and six supported reporting tiers.">
-</picture>
+<p align="center"><sub><a href="assets/cohe-framework.svg">Full-size teaser</a> · <a href="docs/CLAIM_TIER_GUIDE.md">Six reporting tiers and assignment rules</a></sub></p>
 
-[View framework at full size](assets/cohe-framework.svg)
-
-Gates are evaluated separately; their joint evidence supports a tier for the declared target and protocol. See the [reporting-tier definitions and assignment order](docs/CLAIM_TIER_GUIDE.md).
+The gates are evaluated separately; their joint evidence supports a tier for the declared target and protocol. A G3-only pass can support **Operational-only effect**. An unmeasured gate is distinct from a failed gate.
 
 ## Key findings
 
-The four settings below follow paper Table 6; each conclusion concerns its audited target and operational endpoint.
+Four audits show different levels of support. Each finding concerns its tested target and operational endpoint (paper Table 6).
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/cohe-results-summary-mobile.svg">
-  <img src="assets/cohe-results-summary.svg" alt="Four representative COHE audits with separate dependence, prediction, transfer evidence, and supported tiers. An accessible text version follows.">
+  <img src="assets/cohe-results-summary.svg" alt="Four COHE findings: near-zero generative CE prediction, DINOv2 prediction without useful hard-only selection, strong cross-architecture ranking with G2/G3 unmeasured, and a positive retrieval/triage control. Full values and supported tiers are available as text below." width="1120">
 </picture>
 
-[View summary at full size](assets/cohe-results-summary.svg)
-
 <details>
-<summary>Results as text</summary>
+<summary>Evidence, exact values, and supported tiers as text</summary>
 
 | Audit setting | Evidence and supported tier |
 | --- | --- |
@@ -42,6 +47,8 @@ The four settings below follow paper Table 6; each conclusion concerns its audit
 The generative row summarizes multiple audits. G1/G2 entries describe retained evidence; a gate pass requires the declared criteria and uncertainty checks. An unmeasured gate is distinct from a failed gate. Retrieval/triage is a different endpoint from retraining accuracy.
 
 </details>
+
+[Quick start](#quick-start) · [Reproduction coverage](#reproduction-and-experiments) · [Data & checkpoints](#data-and-checkpoints)
 
 ## Installation
 

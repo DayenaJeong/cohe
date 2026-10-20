@@ -1,67 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title description">
-  <title id="title">Representative COHE audit settings</title>
-  <desc id="description">Summary of paper Table 6. Generative proxies have weak CE/margin association, multi-proxy CE R squared about 0.0002, and no protocol-stable selection gain. DINOv2 first-learning has rho 0.4363 and R squared 0.2126, but hard-only accuracy selection loses 14.87 percentage points at a ten percent budget: Target-specific relation. Cross-architecture CE ranking has rho 0.856 to 0.914; prediction and transfer are not evaluated: Weak evidence, G1 only. The ImageNet-1K positive control has rho 0.578, R squared 0.5637, and top-ten-percent recall 62.48 percent, 6.25 times enrichment: Validated surrogate for retrieval/triage only.</desc>
-  <rect width="1180" height="640" fill="#fff"/>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#172b3a">
-    <text x="24" y="37" font-size="25" font-weight="600">Representative COHE audit settings</text>
-    <text x="24" y="69" font-size="18" fill="#465867">Evidence and supported tiers for the tested settings (paper Table 6).</text>
-    <path d="M24 91H1156" stroke="#aebdc8" stroke-width="1.3"/>
-    <g font-size="19" font-weight="600">
-      <text x="24" y="123">Audit setting</text>
-      <text x="274" y="123" fill="#215a8e">G1 · Dependence</text>
-      <text x="453" y="123" fill="#087e8b">G2 · Prediction</text>
-      <text x="639" y="123" fill="#9b4f17">G3 · Transfer</text>
-      <text x="931" y="123">Supported tier</text>
-    </g>
-    <path d="M24 141H1156" stroke="#aebdc8" stroke-width="1.3"/>
-    <g font-size="21">
-      <text x="24" y="181">Generative proxies</text>
-      <text x="24" y="212" font-size="19" fill="#465867">→ CE / margin</text>
-      <text x="274" y="181">Weak</text>
-      <text x="274" y="212">association</text>
-      <text x="453" y="181">Near-zero</text>
-      <text x="453" y="212" font-size="19">CE R² ≈ 0.0002</text>
-      <text x="639" y="181">No protocol-stable</text>
-      <text x="639" y="212">selection gain</text>
-      <text x="931" y="181">No reliable</text>
-      <text x="931" y="212">transfer</text>
-    </g>
-    <path d="M24 245H1156" stroke="#d5dfe5"/>
-    <g font-size="21">
-      <text x="24" y="285">DINOv2</text>
-      <text x="24" y="316" font-size="19" fill="#465867">→ first-learning</text>
-      <text x="274" y="285" fill="#215a8e">ρ = 0.4363</text>
-      <text x="453" y="285" fill="#087e8b">R² = 0.2126</text>
-      <text x="639" y="285">Hard-only accuracy fails†</text>
-      <text x="639" y="316" font-size="19" fill="#9b4f17">10%: −14.87 pp vs. Random</text>
-      <text x="931" y="285">Target-specific</text>
-      <text x="931" y="316">relation</text>
-    </g>
-    <path d="M24 349H1156" stroke="#d5dfe5"/>
-    <g font-size="21">
-      <text x="24" y="389">Cross-architecture</text>
-      <text x="24" y="420" font-size="19" fill="#465867">CE ranking</text>
-      <text x="274" y="389" font-size="19" fill="#215a8e">ρ = 0.856–0.914</text>
-      <text x="453" y="389" font-size="19" fill="#465867">Not evaluated</text>
-      <text x="639" y="389" font-size="19" fill="#465867">Not evaluated</text>
-      <text x="931" y="389">Weak evidence</text>
-      <text x="931" y="420" font-size="19" fill="#465867">G1 only</text>
-    </g>
-    <path d="M24 453H1156" stroke="#d5dfe5"/>
-    <g font-size="21">
-      <text x="24" y="493">ImageNet-1K CE</text>
-      <text x="24" y="524" font-size="19" fill="#465867">retrieval / triage</text>
-      <text x="274" y="493" fill="#215a8e">ρ = 0.578</text>
-      <text x="453" y="493" fill="#087e8b">R² = 0.5637</text>
-      <text x="639" y="493" font-size="20">Top-10% recall 62.48%</text>
-      <text x="639" y="524" font-size="19" fill="#9b4f17">6.25× enrichment</text>
-      <text x="931" y="493">Validated surrogate</text>
-      <text x="931" y="524" font-size="19" fill="#465867">retrieval / triage only</text>
-    </g>
-    <path d="M24 557H1156" stroke="#aebdc8" stroke-width="1.3"/>
-    <g font-size="17" fill="#465867">
-      <text x="24" y="589">† DINOv2 G1/G2 concern first-learning; G3 concerns CIFAR-100/ResNet-18 hard-only accuracy selection.</text>
-      <text x="24" y="616">The generative row summarizes multiple audits; G1/G2 evidence is not an automatic gate-pass label.</text>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="664" viewBox="0 0 1120 664" role="img" aria-labelledby="title description">
+  <title id="title">Four COHE audits: different levels of support</title>
+  <desc id="description">Four representative COHE audit settings, paper Table 6. Generative proxies: weak CE/margin dependence and prediction, multi-proxy CE R squared about 0.0002, no consistent protocol-stable transfer; No reliable transfer. DINOv2: first-learning rho 0.4363, R squared 0.2126; CIFAR-100/ResNet-18 10% hard-only accuracy selection loses 14.87 percentage points versus Random; Target-specific relation. Cross-architecture CE: rho 0.856–0.914, G2/G3 not evaluated; Weak evidence (G1 only). ImageNet-1K retrieval/triage positive control: rho 0.578, R squared 0.5637, top-10% recall 62.48%, enrichment 6.25 times; Validated surrogate for retrieval/triage only. Not evaluated is distinct from failed. DINOv2 first-learning and accuracy are distinct targets.</desc>
+  <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#596978"/></marker></defs>
+  <rect width="1120" height="664" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <path d="M560 16L560 569" stroke="#dce3e9" stroke-width="1"/><path d="M32 293H1088" stroke="#dce3e9" stroke-width="1"/><text x="32" y="43" font-size="25" fill="#243d57" font-weight="600">Generative proxies → CE / margin</text><text x="32" y="94" font-size="36" fill="#10796f" font-weight="600">R² ≈ 0.0002</text><text x="32" y="125" font-size="18" fill="#596978">G2 · multi-proxy CE prediction</text><text x="32" y="166" font-size="20" fill="#27618f">G1  Weak dependence</text><text x="32" y="200" font-size="19" fill="#995d20">G3  No consistent protocol-stable transfer</text><text x="32" y="239" font-size="14" fill="#596978">SUPPORTED TIER</text><text x="32" y="269" font-size="24" fill="#243d57" font-weight="600">No reliable transfer</text><text x="600" y="43" font-size="25" fill="#243d57" font-weight="600">DINOv2 → first-learning</text><text x="600" y="94" font-size="32" fill="#27618f" font-weight="600">ρ 0.4363</text><text x="856" y="94" font-size="32" fill="#10796f" font-weight="600">R² 0.2126</text><text x="600" y="125" font-size="18" fill="#596978">G1 · dependence</text><text x="856" y="125" font-size="18" fill="#596978">G2 · prediction</text><text x="600" y="171" font-size="33" fill="#995d20" font-weight="600">−14.87 pp</text><text x="818" y="171" font-size="20" fill="#995d20">G3 · 10% hard-only</text><text x="600" y="201" font-size="18" fill="#596978">CIFAR-100 / ResNet-18 accuracy vs. Random</text><text x="600" y="239" font-size="14" fill="#596978">SUPPORTED TIER</text><text x="600" y="269" font-size="24" fill="#243d57" font-weight="600">Target-specific relation</text><text x="32" y="338" font-size="25" fill="#243d57" font-weight="600">Cross-architecture CE ranking</text><text x="32" y="389" font-size="36" fill="#27618f" font-weight="600">ρ 0.856–0.914</text><text x="32" y="420" font-size="18" fill="#596978">G1 · rank association</text><text x="32" y="466" font-size="22" fill="#596978">G2 / G3  Not evaluated</text><text x="32" y="514" font-size="14" fill="#596978">SUPPORTED TIER</text><text x="32" y="544" font-size="24" fill="#243d57" font-weight="600">Weak evidence</text><text x="239" y="544" font-size="19" fill="#596978">G1 only</text><text x="600" y="338" font-size="25" fill="#243d57" font-weight="600">ImageNet-1K retrieval / triage</text><text x="600" y="389" font-size="32" fill="#27618f" font-weight="600">ρ 0.578</text><text x="856" y="389" font-size="32" fill="#10796f" font-weight="600">R² 0.5637</text><text x="600" y="420" font-size="18" fill="#596978">G1 · dependence</text><text x="856" y="420" font-size="18" fill="#596978">G2 · prediction</text><text x="600" y="466" font-size="33" fill="#995d20" font-weight="600">62.48% recall</text><text x="600" y="496" font-size="18" fill="#596978">G3 · top-10% budget; 6.25× enrichment</text><text x="600" y="531" font-size="14" fill="#596978">SUPPORTED TIER</text><text x="600" y="561" font-size="24" fill="#243d57" font-weight="600">Validated surrogate</text><text x="600" y="589" font-size="19" fill="#596978">for retrieval / triage only</text><path d="M32 611H1088" stroke="#dce3e9" stroke-width="1"/><text x="32" y="641" font-size="18" fill="#596978">Paper Table 6. DINOv2 G1/G2 concern first-learning; G3 concerns accuracy selection.</text>
   </g>
 </svg>

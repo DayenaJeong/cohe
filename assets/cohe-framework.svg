@@ -1,57 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title description">
-  <title id="title">COHE: three evidence gates and six reporting tiers</title>
-  <desc id="description">A proxy–target–protocol tuple feeds three parallel gates: G1 dependence, G2 held-out prediction, and G3 operational transfer. Their joint evidence determines a supported reporting tier. The gates are evaluated separately and do not form a sequential pass-through cascade. The six tiers are Validated surrogate, Predictive validity only, Target-specific relation, Operational-only effect, Weak evidence, and No reliable transfer.</desc>
-  <defs>
-    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#687888"/></marker>
-  </defs>
-  <rect width="1100" height="500" fill="#fff"/>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#172b3a">
-    <text x="24" y="38" font-size="25" font-weight="600">One tuple. Three separately evaluated evidence gates.</text>
-    <text x="24" y="69" font-size="18" fill="#465867">Joint evidence supports a claim for the declared target and protocol.</text>
-    <g font-size="16" fill="#465867" letter-spacing="1">
-      <text x="24" y="116">AUDIT TUPLE</text>
-      <text x="300" y="116">EVIDENCE GATES</text>
-      <text x="755" y="116">SUPPORTED REPORTING TIER</text>
-    </g>
-    <rect x="24" y="183" width="208" height="187" fill="#fff" stroke="#bac7d0" stroke-width="1.3"/>
-    <g text-anchor="middle" font-size="23">
-      <text x="128" y="224">Proxy</text>
-      <text x="128" y="253" font-size="18" fill="#465867">+</text>
-      <text x="128" y="283">Target</text>
-      <text x="128" y="313" font-size="18" fill="#465867">+</text>
-      <text x="128" y="344">Protocol</text>
-    </g>
-    <g fill="none" stroke="#687888" stroke-width="1.4">
-      <path d="M232 276H265M265 184V389"/>
-      <path d="M265 184H297" marker-end="url(#arrow)"/>
-      <path d="M265 287H297" marker-end="url(#arrow)"/>
-      <path d="M265 389H297" marker-end="url(#arrow)"/>
-      <path d="M682 184H714M682 287H714M682 389H714M714 184V389"/>
-      <path d="M714 287H751" marker-end="url(#arrow)"/>
-    </g>
-    <rect x="300" y="142" width="382" height="85" fill="#eef5fb"/>
-    <rect x="300" y="142" width="4" height="85" fill="#215a8e"/>
-    <text x="319" y="175" font-size="23" fill="#215a8e" font-weight="600">G1  Dependence</text>
-    <text x="319" y="207" font-size="19">Pearson r, Spearman ρ</text>
-    <rect x="300" y="245" width="382" height="85" fill="#edf8f6"/>
-    <rect x="300" y="245" width="4" height="85" fill="#087e8b"/>
-    <text x="319" y="278" font-size="23" fill="#087e8b" font-weight="600">G2  Held-out prediction</text>
-    <text x="319" y="310" font-size="19">Held-out predictive power R²</text>
-    <rect x="300" y="347" width="382" height="85" fill="#fff6ed"/>
-    <rect x="300" y="347" width="4" height="85" fill="#9b4f17"/>
-    <text x="319" y="380" font-size="23" fill="#9b4f17" font-weight="600">G3  Operational transfer</text>
-    <text x="319" y="412" font-size="19">Endpoint gain vs. matched baseline</text>
-    <g font-size="21">
-      <text x="755" y="170">Validated surrogate</text>
-      <text x="755" y="219">Predictive validity only</text>
-      <text x="755" y="268">Target-specific relation</text>
-      <text x="755" y="317">Operational-only effect</text>
-      <text x="755" y="366">Weak evidence</text>
-      <text x="755" y="415">No reliable transfer</text>
-    </g>
-    <g stroke="#d5dfe5" stroke-width="1">
-      <path d="M755 185H1075M755 234H1075M755 283H1075M755 332H1075M755 381H1075"/>
-    </g>
-    <text x="24" y="475" font-size="18" fill="#465867">Apply the paper’s tier definitions and assignment order; an unmeasured gate is not a failure.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="568" viewBox="0 0 1120 568" role="img" aria-labelledby="title description">
+  <title id="title">COHE: prediction does not guarantee utility</title>
+  <desc id="description">A proxy–target–protocol audit tuple feeds G1 Dependence, G2 Held-out prediction, and G3 Operational transfer in parallel, not as a sequential cascade. The DINOv2 example has first-learning rho 0.4363 and held-out R squared 0.2126, yet 10% hard-only accuracy selection loses 14.87 percentage points versus Random. First-learning and selection accuracy are distinct targets. The supported tier is Target-specific relation. Joint evidence maps to one of six reporting tiers: Validated surrogate; Predictive validity only; Target-specific relation; Operational-only effect; Weak evidence; No reliable transfer. An unmeasured gate is not a failed gate. G3 alone can support Operational-only effect.</desc>
+  <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#596978"/></marker></defs>
+  <rect width="1120" height="568" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="32" y="32" font-size="15" fill="#596978">THE COHE AUDIT</text><text x="32" y="78" font-size="34" fill="#243d57" font-weight="600">Prediction does not guarantee utility.</text><text x="32" y="121" font-size="20" fill="#243d57">Audit tuple: Proxy + Target + Protocol</text><text x="1088" y="121" font-size="17" fill="#596978" text-anchor="end">Three separately evaluated gates</text><path d="M560 135V155M182 155H938M182 155V183M560 155V183M938 155V183" fill="none" stroke="#9aa8b5" stroke-width="1.3"/><path d="M32 191H332" stroke="#27618f" stroke-width="3"/><text x="32" y="224" font-size="21" fill="#27618f" font-weight="600">G1  Dependence</text><text x="32" y="263" font-size="28" fill="#243d57" font-weight="600">Does it align?</text><text x="32" y="292" font-size="18" fill="#596978">Rank association</text><text x="32" y="370" font-size="39" fill="#27618f" font-weight="600">ρ = 0.4363</text><text x="32" y="403" font-size="20" fill="#243d57">First-learning target</text><text x="32" y="428" font-size="17" fill="#596978"></text><path d="M410 191H710" stroke="#10796f" stroke-width="3"/><text x="410" y="224" font-size="21" fill="#10796f" font-weight="600">G2  Held-out prediction</text><text x="410" y="263" font-size="28" fill="#243d57" font-weight="600">Does it predict?</text><text x="410" y="292" font-size="18" fill="#596978">Held-out predictive power</text><text x="410" y="370" font-size="39" fill="#10796f" font-weight="600">R² = 0.2126</text><text x="410" y="403" font-size="20" fill="#243d57">First-learning target</text><text x="410" y="428" font-size="17" fill="#596978"></text><path d="M788 191H1088" stroke="#995d20" stroke-width="3"/><text x="788" y="224" font-size="21" fill="#995d20" font-weight="600">G3  Operational transfer</text><text x="788" y="263" font-size="28" fill="#243d57" font-weight="600">Does it help?</text><text x="788" y="292" font-size="18" fill="#596978">Gain vs. matched baseline</text><text x="788" y="370" font-size="39" fill="#995d20" font-weight="600">−14.87 pp</text><text x="788" y="403" font-size="20" fill="#243d57">10% hard-only accuracy</text><text x="788" y="428" font-size="17" fill="#596978">versus Random</text><text x="32" y="330" font-size="16" fill="#596978">DINOv2 example · CIFAR-100</text><path d="M182 442V454H938V442M560 454V472" fill="none" stroke="#9aa8b5" stroke-width="1.3" marker-end="url(#arrow)"/><text x="32" y="508" font-size="16" fill="#596978">SUPPORTED REPORTING TIER</text><text x="1088" y="509" font-size="27" fill="#243d57" font-weight="600" text-anchor="end">Target-specific relation</text><text x="32" y="545" font-size="17" fill="#596978">G1/G2 concern first-learning; G3 tests accuracy selection. The tier reflects their joint evidence.</text>
   </g>
 </svg>
