@@ -15,24 +15,40 @@
 COHE (Cross-Objective Hardness Evaluation) separates ranking agreement, held-out prediction, and downstream benefit when auditing sample difficulty proxies. These forms of evidence need not imply one another.
 
 <p align="center">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/cohe-framework-mobile.svg">
-    <img src="assets/cohe-framework.svg" alt="Prediction does not guarantee utility. Three parallel COHE gates examine dependence, held-out prediction, and operational transfer. The DINOv2 example supports Target-specific relation." width="1120">
-  </picture>
+  <a href="assets/paper/figure-1-framework.png?raw=1"><img src="assets/paper/figure-1-framework.png" alt="Paper Figure 1: a proxy–target–protocol tuple feeds three parallel evidence gates. The DINOv2 example shows first-learning ρ = 0.4363, held-out R² = 0.2126, and a separate 10% hard-only accuracy change of −14.87 pp versus Random; Target-specific relation." width="1120"></a>
 </p>
 
-<p align="center"><sub><a href="assets/cohe-framework.svg">Full-size teaser</a> · <a href="docs/CLAIM_TIER_GUIDE.md">Six reporting tiers and assignment rules</a></sub></p>
+**Figure 1. COHE evaluation framework.** The DINOv2 example distinguishes first-learning evidence from downstream accuracy selection.
+
+[Full-resolution PNG](assets/paper/figure-1-framework.png?raw=1) · [Vector SVG](assets/paper/figure-1-framework.svg?raw=1) · [Six reporting tiers and assignment rules](docs/CLAIM_TIER_GUIDE.md)
 
 The gates are evaluated separately; their joint evidence supports a tier for the declared target and protocol. A G3-only pass can support **Operational-only effect**. An unmeasured gate is distinct from a failed gate.
 
 ## Key findings
 
-Four audits show different levels of support. Each finding concerns its tested target and operational endpoint (paper Table 6).
+### Dependence audit
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/cohe-results-summary-mobile.svg">
-  <img src="assets/cohe-results-summary.svg" alt="Four COHE findings: near-zero generative CE prediction, DINOv2 prediction without useful hard-only selection, strong cross-architecture ranking with G2/G3 unmeasured, and a positive retrieval/triage control. Full values and supported tiers are available as text below." width="1120">
-</picture>
+<p align="center">
+  <a href="assets/paper/figure-2c-dependence.png?raw=1"><img src="assets/paper/figure-2c-dependence.png" alt="Paper Figure 2(c): nine-row Spearman correlation heatmap for CIFAR-100 and ImageNet-1K generative proxies versus CE, margin and GradNorm. The DDPM row is score norm. CE/margin alignment is weak; some GradNorm associations are larger and target-specific. The original dataset labels, cell values and −0.4 to +0.4 colorbar are retained." width="1120"></a>
+</p>
+
+**Figure 2(c). Dependence audit.** Generative proxies have weak CE/margin alignment; larger GradNorm associations are target-specific. DDPM denotes the score norm used for Gen-Hard selection.
+
+[Full-resolution PNG](assets/paper/figure-2c-dependence.png?raw=1) · [Vector SVG](assets/paper/figure-2c-dependence.svg?raw=1)
+
+### Operational transfer
+
+<p align="center">
+  <a href="assets/paper/figure-4-operational-transfer.png?raw=1"><img src="assets/paper/figure-4-operational-transfer.png" alt="Paper Figure 4: CIFAR-100/ResNet-18 accuracy differences versus Random across 10%, 30%, 50% and 70% retained-data budgets, with means and confidence intervals for Gen-Hard, Disc-Hard, Predictive Entropy, Coreset-kCenter and OHS-XOR diagnostic. Gen-Hard uses DDPM score norm, distinct from DINOv2 and ImageNet retrieval." width="1120"></a>
+</p>
+
+**Figure 4. Operational-transfer audit.** CIFAR-100/ResNet-18 paired accuracy differences versus Random, with five seeds and 95% confidence intervals. Gen-Hard uses DDPM score norm; Disc-Hard and OHS-XOR are diagnostics.
+
+[Full-resolution PNG](assets/paper/figure-4-operational-transfer.png?raw=1) · [Vector SVG](assets/paper/figure-4-operational-transfer.svg?raw=1)
+
+### Results at a glance
+
+Four audits show different levels of support. Each finding concerns its tested target and operational endpoint (paper Table 6).
 
 <details>
 <summary>Evidence, exact values, and supported tiers as text</summary>
