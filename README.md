@@ -15,16 +15,26 @@
 COHE (Cross-Objective Hardness Evaluation) separates ranking agreement, held-out prediction, and downstream benefit when auditing sample difficulty proxies. These forms of evidence need not imply one another.
 
 <p align="center">
-  <a href="assets/paper/figure-1-framework.png?raw=1"><img src="assets/paper/figure-1-framework.png" alt="Paper Figure 1: a proxy–target–protocol tuple feeds three parallel evidence gates. The DINOv2 example shows first-learning ρ = 0.4363, held-out R² = 0.2126, and a separate 10% hard-only accuracy change of −14.87 pp versus Random; Target-specific relation." width="1120"></a>
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/cohe-framework-mobile.svg">
+    <img src="assets/cohe-framework.svg" alt="COHE evaluates a proxy–target–protocol tuple through three separate evidence gates: dependence, held-out prediction, and operational transfer, then determines the supported reporting tier. The DINOv2 example distinguishes first-learning from selection accuracy." width="1120">
+  </picture>
 </p>
 
-**Figure 1. COHE evaluation framework.** The DINOv2 example distinguishes first-learning evidence from downstream accuracy selection.
-
-[Full-resolution PNG](assets/paper/figure-1-framework.png?raw=1) · [Vector SVG](assets/paper/figure-1-framework.svg?raw=1) · [Six reporting tiers and assignment rules](docs/CLAIM_TIER_GUIDE.md)
+[Original paper Figure 1](assets/paper/figure-1-framework.png?raw=1) · [Six reporting tiers and assignment rules](docs/CLAIM_TIER_GUIDE.md)
 
 The gates are evaluated separately; their joint evidence supports a tier for the declared target and protocol. A G3-only pass can support **Operational-only effect**. An unmeasured gate is distinct from a failed gate.
 
 ## Key findings
+
+Four audits show different levels of support. Each finding concerns its tested target and operational endpoint (paper Table 6).
+
+<p align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="assets/cohe-results-summary-mobile.svg">
+    <img src="assets/cohe-results-summary.svg" alt="COHE summary of four audit settings: generative proxies, DINOv2 first-learning, cross-architecture CE ranking, and ImageNet-1K retrieval/triage, including G1, G2, G3 evidence and reporting tiers. G2/G3 are not evaluated for the ranking anchor; the positive control is limited to retrieval/triage." width="1120">
+  </picture>
+</p>
 
 ### Dependence audit
 
@@ -47,8 +57,6 @@ The gates are evaluated separately; their joint evidence supports a tier for the
 [Full-resolution PNG](assets/paper/figure-4-operational-transfer.png?raw=1) · [Vector SVG](assets/paper/figure-4-operational-transfer.svg?raw=1)
 
 ### Results at a glance
-
-Four audits show different levels of support. Each finding concerns its tested target and operational endpoint (paper Table 6).
 
 <details>
 <summary>Evidence, exact values, and supported tiers as text</summary>
